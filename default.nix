@@ -1,7 +1,6 @@
 { project ? import ./nix {} }:
-
-#(import ./nix {}).ci
-project.pkgs.stdenv.mkDerivation rec {
+{
+cyberchef = project.pkgs.stdenv.mkDerivation rec {
   name = "cyberchef";
   version = "9.21.0";
   src = project.pkgs.fetchzip {
@@ -11,4 +10,6 @@ project.pkgs.stdenv.mkDerivation rec {
   };
   builder = ./builder.sh;
   coreutils = project.pkgs.coreutils;
+};
+ci = (import ./nix {}).ci;
 }
