@@ -2,7 +2,7 @@
 }:
 
 project.pkgs.mkShell {
-  buildInputs = builtins.attrValues project.devTools;
+  buildInputs = builtins.attrValues project.devTools ++ [ project.pkgs.firefox project.pkgs.xdg_utils ];
   shellHook = ''
     ${project.ci.pre-commit-check.shellHook}
   '';
