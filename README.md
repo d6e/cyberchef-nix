@@ -1,1 +1,1 @@
-# cyberchef-nix
+# Cyberchef Nix Package
