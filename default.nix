@@ -21,6 +21,13 @@
       chmod +x $out/bin/cyberchef
     '';
     coreutils = project.pkgs.coreutils;
+    meta = with project.pkgs.stdenv.lib; {
+      description =
+        "The Cyber Swiss Army Knife - a web app for encryption, encoding, compression and data analysis.";
+      license = licenses.asl20;
+      maintainers = { email = "nixpkgs@d6e.io"; github = "d6e"; githubId = 2476055; name = "Danielle"; };
+      homepage = "https://github.com/gchq/CyberChef";
+    };
   };
   ci = (import ./nix {}).ci;
 }
