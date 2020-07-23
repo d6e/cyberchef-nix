@@ -18,4 +18,4 @@ jobs:
         #authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix-build 
     - run: nix-shell --run "echo OK"
-    - run: BROWSER=firefox nix-shell --pure --run "./result/bin/cyberchef"
+      #    - run: BROWSER=firefox nix-shell --pure --run "./result/bin/cyberchef"
